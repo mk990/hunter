@@ -1,18 +1,15 @@
 name: Build and Release
 
 on:
-  pull_request:
+  push:
     branches:
       - main
       - master
-  workflow_dispatch:  # Allow manual trigger
 
 jobs:
   docker:
     name: Build and Push Docker Image
-    needs: build
     runs-on: ubuntu-latest
-    if: github.event_name != 'pull_request'  # Don't build docker on PRs
 
     steps:
       - name: Checkout code
