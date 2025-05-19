@@ -48,19 +48,20 @@ RUN apt-get update && apt-get upgrade -y && \
     pydf \
     htop \
     fastfetch \
+    python-is-python3 \
+    ffuf \
+    assetfinder \
+    amass \
     proxychains && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install Go tools
-RUN go install github.com/tomnomnom/assetfinder@latest && \
-    go install github.com/ffuf/ffuf/v2@latest && \
-    go install github.com/tomnomnom/hacks/tok@latest && \
+RUN go install github.com/tomnomnom/hacks/tok@latest && \
     go install github.com/tomnomnom/unfurl@latest && \
     go install github.com/tomnomnom/qsreplace@latest && \
     go install github.com/tomnomnom/anew@latest && \
     go install github.com/tomnomnom/hacks/inscope@latest && \
     go install github.com/lc/gau@latest && \
-    go install github.com/owasp-amass/amass/v4/...@master && \
     go install github.com/d3mondev/puredns/v2@latest && \
     go install github.com/hueristiq/xsubfind3r/cmd/xsubfind3r@latest && \
     go install github.com/projectdiscovery/pdtm/cmd/pdtm@latest && \
