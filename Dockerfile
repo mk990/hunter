@@ -24,6 +24,7 @@ RUN apt-get update && apt-get upgrade -y && \
     massdns \
     chromium \
     zsh \
+    npm \
     tmux \
     build-essential \
     libssl-dev \
@@ -90,8 +91,9 @@ RUN pipx install git+https://github.com/randixploit/crlfuzzer.git && \
     pipx install git+https://github.com/xnl-h4ck3r/waymore.git && \
     pipx install git+https://github.com/xnl-h4ck3r/urless.git
 
-RUN nuclei
+RUN apt-get update && nuclei
 
-RUN apt-get update
+COPY zshrc_extra  /etc/zshrc_extra
+RUN cat /etc/zshrc_extra >> /root/.zshrc
 
 CMD ["bash"]
