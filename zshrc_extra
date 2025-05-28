@@ -11,19 +11,19 @@ setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
+unsetopt nomatch
+setopt interactivecomments
 
-if [ -f /usr/bin/nvim ];then
-    alias vi="nvim"
-    export EDITOR="nvim"
-fi
+# Aliases
+alias vi="nvim"
 alias :q="exit"
 alias ls='ls --color'
 alias ll='eza -lg --sort=modified --icons'
 alias tree='eza --tree'
+alias zs="source ~/.zshrc"
 
-# Aliases
-unalias gau
-unalias gf
+# set editor to neovim
+export EDITOR="nvim"
 
 
 eval "$(fzf --zsh)"
