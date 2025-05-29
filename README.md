@@ -22,3 +22,10 @@ Clone this repository and build the Docker image:
 git clone https://raw.githubusercontent.com/mk990/hunter.git
 cd hunter
 docker build -t hunter .
+```
+
+Or run it directly from Quay
+
+```bash
+docker run --rm -it --hostname hunter -v ./save:/root/save quay.io/mk990/hunter zsh
+```
