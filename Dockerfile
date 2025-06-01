@@ -40,6 +40,7 @@ RUN apt-get update && apt-get upgrade -y && \
     fd-find \
     ripgrep \
     zsh \
+    nano \
     neovim \
     vim \
     fzf \
@@ -91,7 +92,7 @@ RUN pipx install git+https://github.com/randixploit/crlfuzzer.git && \
     pipx install git+https://github.com/xnl-h4ck3r/waymore.git && \
     pipx install git+https://github.com/xnl-h4ck3r/urless.git
 
-RUN apt-get update && nuclei
+RUN apt-get update && nuclei && touch ~/.hushlogin
 
 COPY zshrc_extra  /etc/zshrc_extra
 RUN cat /etc/zshrc_extra >> /root/.zshrc
