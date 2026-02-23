@@ -24,7 +24,6 @@ RUN apt-get update && apt-get upgrade -y && \
     massdns \
     chromium \
     zsh \
-    npm \
     tmux \
     build-essential \
     libssl-dev \
@@ -40,7 +39,6 @@ RUN apt-get update && apt-get upgrade -y && \
     fd-find \
     ripgrep \
     zsh \
-    nano \
     neovim \
     vim \
     fzf \
